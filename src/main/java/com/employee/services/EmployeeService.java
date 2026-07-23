@@ -30,7 +30,6 @@ public class EmployeeService {
 
         Employee existingEmployee = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Employee not found"));
-
         existingEmployee.setFirstName(employee.getFirstName());
         existingEmployee.setLastName(employee.getLastName());
         existingEmployee.setEmail(employee.getEmail());
