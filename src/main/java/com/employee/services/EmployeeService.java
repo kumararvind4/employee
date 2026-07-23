@@ -37,7 +37,6 @@ public class EmployeeService {
         existingEmployee.setEmail(employee.getEmail());
 
         Employee updatedEmployee = repository.save(existingEmployee);
-
         producer.sendMessage(updatedEmployee.getEmail());
 
         return updatedEmployee;
