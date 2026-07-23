@@ -26,7 +26,6 @@ public class EmployeeService {
         producer.sendMessage(savedEmployee.getEmail());
         return savedEmployee;
     }
-
     public Employee updateEmployee(Long id, Employee employee) {
 
         Employee existingEmployee = repository.findById(id)
