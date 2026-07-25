@@ -16,7 +16,9 @@ public class EmailService {
     private static final Logger logger =
             LoggerFactory.getLogger(EmailService.class);
 
-    public void sendNotification(String email) {
+    public void sendNotification(String email,
+                                 String subject,
+                                 String body) {
 
         try {
 
@@ -24,8 +26,8 @@ public class EmailService {
                     new SimpleMailMessage();
 
             message.setTo(email);
-            message.setSubject("Employee Notification");
-            message.setText("Employee record processed successfully.");
+            message.setSubject(subject);
+            message.setText(body);
 
             mailSender.send(message);
 
